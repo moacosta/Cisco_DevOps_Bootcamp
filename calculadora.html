@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<!--
+	Cisco Programmability Training
+	Basic Calculator - Faustino Aranda
+	Javascript Example
+-->
+
+<!--Calulator Javascript-->
+<script language="javascript" type="text/javascript">
+
+function calculadora()
+{
+	//Start java script
+	//Initialize result
+	var resultado = 0;
+
+	//Ask for numbers and operation
+	var num1 = parseInt(prompt("Ingresa el primer numero: "));
+	var num2 = parseInt(prompt("Ingresa el segundo numero: "));
+	var oper = prompt("Que operacion deseas realizar (+,-,x,/) ?");
+	
+	//Select operation
+	switch (oper){
+		case '+':
+			//print operation
+			alert("\nSumando... ");
+			//perform operation
+			resultado = num1 + num2;
+			break;
+		case '-':
+			alert("\nRestando... ");			
+			resultado = num1 - num2;
+			break;
+		case 'x':
+			alert("\nMultiplicando...");
+			resultado = num1 * num2;
+			break;
+		case '/':
+			//Division case
+			alert("\nDividiendo...");
+			//Verify if num2 is 0
+			if(num2 == 0){
+				//If yes, print "undefined"
+				alert("\n\tIndefinido!!!");
+			}
+			else{
+				//If no, perform operation
+				resultado = num1 / num2;
+			}//if
+			break;
+		default:
+			//If no valid operation, print Invalid
+			alert("\nOperacion no valida...");
+			break;
+	}//switch
+	//print result
+	alert("El resultado es: "+resultado)
+}//function
+
+</script>
+
+//start
+<html>
+<body>
+<!--print welcome-->
+<p><font color="blue"> Bienvenido a Calculadora basica...</font></br>	<font color="gray">Faustino Aranda</font></p>
+
+<!--launch operations, additional operations, invoke Javascript routine-->
+<input id="calculadora" type="button" value="> Calculadora <" onclick="return calculadora()">  </input>
+
+</body>
+</html>
+
